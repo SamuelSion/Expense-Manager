@@ -35,9 +35,25 @@ A static web app for managing expenses and income. The interface is built in Heb
 
 - HTML5
 - CSS3
-- JavaScript
 - Bootstrap 5
+- JavaScript ES6+
+- Chart.js
+- Fetch API
+- async/await
 - Bootstrap Icons
+
+## Tools & Concepts Used
+
+- Local Storage
+- JSON
+- IIFE
+- Arrow Functions
+- addEventListener
+- Event Delegation
+- Map and Set
+- DOM manipulation
+- Claude
+- Gemini
 
 ## How to Run
 
