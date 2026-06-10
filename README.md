@@ -10,6 +10,10 @@ A static web app for managing expenses and income. The interface is built in Heb
 - Market and currency data on the home page
 - Responsive UI built with Bootstrap
 
+## Live Demo
+
+- GitHub Pages: https://samuelsion.github.io/Expense-Manager/
+
 ## Pages
 
 - `index.html` - home page and record management
