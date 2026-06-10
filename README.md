@@ -1,6 +1,6 @@
 # Expense Manager
 
-A static expense and income manager built for GitHub Pages. The interface is in Hebrew with RTL layout, and all data is stored locally in the browser using `localStorage`, so no server or database is required.
+A static expense and income manager. The interface is in Hebrew with RTL layout, and all data is stored locally in the browser using `localStorage`, so no server or database is required.
 
 [![Live Demo](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-0d6efd?style=for-the-badge)](https://samuelsion.github.io/Expense-Manager/)
 
