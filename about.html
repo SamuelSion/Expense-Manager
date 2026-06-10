@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מנהל הוצאות והכנסות | אודות</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-wrapper"></div>
+    <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="brand-icon">💰</span> מנהל הוצאות והכנסות</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> דף בית</a></li>
+                    <li class="nav-item"><a class="nav-link" href="filters.html"><i class="bi bi-funnel"></i> פילטרים</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html"><i class="bi bi-bar-chart-line"></i> דו"חות</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> אודות</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header animate-in"><h1>ℹ️ אודות</h1><p>מידע על המערכת ועל המפתח</p></div>
+            <div class="row g-4">
+                <!-- Developer Card -->
+                <div class="col-lg-5 animate-in animate-delay-1">
+                    <div class="glass-card text-center">
+                        <div class="card-title justify-content-center"><i class="bi bi-person-circle"></i> המפתח</div>
+                        <img src="images/profile.jpg" alt="תמונת המפתח" class="about-avatar mx-auto">
+                        <div class="about-name">שמואל סיהון</div>
+                        <div class="about-role">Full Stack Developer</div>
+
+                        <div class="about-section text-start" >
+                            <h3><i class="bi bi-person-vcard" ></i> קצת עליי</h3>
+                            <p>סטודנט בקורס Full Stack Development בג'ון ברייס. לומד ובונה אתרים ואפליקציות עם טכנולוגיות מודרניות. הפרויקט הזה נבנה כחלק מהקורס ומדגים שימוש מקצועי ב-HTML, CSS, Bootstrap, JavaScript ואינטגרציות API.</p>
+                        </div>
+
+                        <div class="about-section text-start">
+                            <h3><i class="bi bi-envelope" ></i> יצירת קשר</h3>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-envelope-fill"></i> <a href="mailto:sionshmuel@gmail.com" >sionshmuel@gmail.com</a></li>
+                                <li><i class="bi bi-phone-fill"></i> <a href="tel:0506248296" >050-624-8296</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info Card -->
+                <div class="col-lg-7 animate-in animate-delay-2">
+                    <div class="glass-card">
+                        <div class="card-title"><i class="bi bi-gear"></i> על המערכת</div>
+                        <div class="about-section">
+                            <p><strong>מנהל הוצאות והכנסות</strong> הוא אתר מקיף לניהול פיננסי אישי ועסקי. המערכת מאפשרת לעקוב אחרי הוצאות והכנסות, לסנן לפי קריטריונים שונים, ולצפות בדו"חות גרפיים. מתאים גם לעצמאים עם קטגוריות עסקיות ייעודיות. כל הנתונים נשמרים בדפדפן (Local Storage) ולא נשלחים לשום שרת חיצוני.</p>
+                        </div>
+
+                        <div class="about-section">
+                            <h3><i class="bi bi-stars" ></i> יכולות המערכת</h3>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> ניהול הוצאות — הוספה, עדכון ומחיקה (16 קטגוריות)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> ניהול הכנסות — הוספה, עדכון ומחיקה (8 קטגוריות)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> מאזן בזמן אמת — הכנסות מול הוצאות</li>
+                                <li><i class="bi bi-check-circle-fill"></i> נתוני שוק חיים — שערי מטבעות, ריבית, מדדים (API)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> ולידציה חכמה של טפסים (JavaScript)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> שמירת נתונים ב-Local Storage</li>
+                                <li><i class="bi bi-check-circle-fill"></i> פילטרים מתקדמים — שנים, חודשים, ימים, קטגוריות, סכום</li>
+                                <li><i class="bi bi-check-circle-fill"></i> בחירה מרובה בפילטרים ובדו"חות</li>
+                                <li><i class="bi bi-check-circle-fill"></i> גרף עוגה — חלוקה לפי קטגוריה</li>
+                                <li><i class="bi bi-check-circle-fill"></i> גרף עמודות — השוואה חודשית (הוצאות מול הכנסות)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> ייצוא לקובץ PDF ו-CSV</li>
+                                <li><i class="bi bi-check-circle-fill"></i> תמיכה בעצמאים — משכורות, חומר גלם, שיווק ועוד</li>
+                            </ul>
+                        </div>
+
+                        <div class="about-section">
+                            <h3><i class="bi bi-code-slash" ></i> טכנולוגיות</h3>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                <span class="category-badge cat-food">HTML5</span>
+                                <span class="category-badge cat-gov">CSS3</span>
+                                <span class="category-badge cat-leisure">Bootstrap 5</span>
+                                <span class="category-badge cat-education">JavaScript ES6+</span>
+                                <span class="category-badge cat-invest">Chart.js</span>
+                                <span class="category-badge cat-salary">Fetch API</span>
+                                <span class="category-badge cat-allowance">async/await</span>
+                                <span class="category-badge cat-invest-inc">Claude</span>
+                                <span class="category-badge cat-rental">Gemini</span>
+                            </div>
+                        </div>
+
+                        <div class="about-section">
+                            <h3><i class="bi bi-mortarboard" ></i> נושאים שנלמדו ויושמו</h3>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                <span class="category-badge cat-telecom">IIFE</span>
+                                <span class="category-badge cat-marketing">addEventListener</span>
+                                <span class="category-badge cat-materials">Arrow Functions</span>
+                                <span class="category-badge cat-shipping">Map & Set</span>
+                                <span class="category-badge cat-fees">Event Delegation</span>
+                                <span class="category-badge cat-rental">Local Storage</span>
+                                <span class="category-badge cat-interest">JSON</span>
+                                <span class="category-badge cat-family">DHTML / DOM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><div class="container">© 2026 מנהל הוצאות והכנסות — שמואל סיהון | כל הזכויות שמורות</div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

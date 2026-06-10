@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מנהל הוצאות והכנסות | פילטרים</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bg-wrapper"></div>
+
+    <!-- NAVBAR -->
+    <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-icon">💰</span>
+                מנהל הוצאות והכנסות
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> דף בית</a></li>
+                    <li class="nav-item"><a class="nav-link" href="filters.html"><i class="bi bi-funnel"></i> פילטרים</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html"><i class="bi bi-bar-chart-line"></i> דו"חות</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> אודות</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header animate-in">
+                <h1>🔍 פילטרים</h1>
+                <p>סננו את ההוצאות לפי קריטריונים שונים — תאריך, קטגוריה וסכום</p>
+            </div>
+
+            <div class="row">
+                <!-- Filters Column -->
+                <div class="col-lg-4 animate-in animate-delay-1">
+
+                    <!-- 3 Toggle Circles -->
+                    <div class="filter-toggles">
+                        <div class="filter-toggle" id="toggle-years" data-target="panel-years" data-color="active-purple">
+                            <div class="toggle-circle">📅</div>
+                            <span class="toggle-label">שנים</span>
+                        </div>
+                        <div class="filter-toggle" id="toggle-months" data-target="panel-months" data-color="active-green">
+                            <div class="toggle-circle">🗓️</div>
+                            <span class="toggle-label">חודשים</span>
+                        </div>
+                        <div class="filter-toggle" id="toggle-days" data-target="panel-days" data-color="active-cyan">
+                            <div class="toggle-circle">📆</div>
+                            <span class="toggle-label">ימים</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel: Years (multi-select) -->
+                    <div class="filter-panel" id="panel-years">
+                        <div class="filter-section">
+                            <div class="filter-section-title">
+                                <i class="bi bi-calendar-event"></i> בחירת שנים (בחירה מרובה)
+                            </div>
+                            <div class="check-grid" id="years-checks">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel: Months (multi-select) -->
+                    <div class="filter-panel" id="panel-months">
+                        <div class="filter-section">
+                            <div class="filter-section-title">
+                                <i class="bi bi-calendar-month"></i> בחירת חודשים (בחירה מרובה)
+                            </div>
+                            <div class="check-grid" id="months-checks">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel: Days (calendar) -->
+                    <div class="filter-panel" id="panel-days">
+                        <div class="filter-section">
+                            <div class="filter-section-title">
+                                <i class="bi bi-calendar-date"></i> בחירת טווח תאריכים
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <label class="form-label">מתאריך</label>
+                                    <input type="date" class="form-control" id="filter-date-from">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">עד תאריך</label>
+                                    <input type="date" class="form-control" id="filter-date-to">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expense Category Filter -->
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <i class="bi bi-tags"></i> קטגוריות הוצאה
+                        </div>
+                        <div class="check-grid" id="category-checks">
+                        </div>
+                    </div>
+
+                    <!-- Income Category Filter -->
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <i class="bi bi-tags"></i> קטגוריות הכנסה
+                        </div>
+                        <div class="check-grid" id="income-category-checks">
+                        </div>
+                    </div>
+
+                    <!-- Amount + Type Filter -->
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <i class="bi bi-cash-stack"></i> סינון לפי טווח סכום
+                        </div>
+                        <label class="form-label" >סוג רשומות:</label>
+                        <div class="type-selector mb-3" id="filter-type-selector">
+                            <button class="type-selector-btn active" data-value="both">📊 הוצאות והכנסות</button>
+                            <button class="type-selector-btn" data-value="expenses">📉 הוצאות</button>
+                            <button class="type-selector-btn" data-value="incomes">📈 הכנסות</button>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label">מינימום (₪)</label>
+                                <input type="number" class="form-control" id="filter-min-amount" step="0.01" placeholder="0">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">מקסימום (₪)</label>
+                                <input type="number" class="form-control" id="filter-max-amount" step="0.01" placeholder="ללא הגבלה">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex gap-2 mt-2">
+                        <button class="btn-primary-glow flex-fill" id="apply-filters-btn">
+                            <i class="bi bi-funnel-fill"></i> החל פילטרים
+                        </button>
+                        <button class="btn-outline-custom flex-fill" id="reset-filters-btn">
+                            <i class="bi bi-arrow-counterclockwise"></i> אפס
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Column — multiple result blocks -->
+                <div class="col-lg-8 animate-in animate-delay-2">
+                    <div class="glass-card">
+                        <div class="card-title">
+                            <i class="bi bi-table"></i> תוצאות
+                        </div>
+                        <div id="results-container">
+                            <!-- Result blocks will be inserted by JS -->
+                            <div class="empty-state" id="results-empty">
+                                <div class="empty-icon">🔍</div>
+                                <p>בחרו פילטר ולחצו "החל פילטרים" כדי לראות תוצאות</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">© 2026 מנהל הוצאות והכנסות — שמואל סיהון | כל הזכויות שמורות</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filters.js"></script>
+</body>
+
+</html>
