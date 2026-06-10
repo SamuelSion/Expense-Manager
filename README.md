@@ -1,23 +1,23 @@
 # Expense Manager
 
-אפליקציית ווב סטטית לניהול הוצאות והכנסות, בעברית ובכיוון RTL. הנתונים נשמרים מקומית בדפדפן באמצעות `localStorage`, כך שאין צורך בשרת או במסד נתונים.
+A static web app for managing expenses and income. The interface is built in Hebrew with RTL layout, and all data is stored locally in the browser using `localStorage`, so no server or database is required.
 
-## מה יש בפרויקט
+## Features
 
-- הוספה, עריכה ומחיקה של הוצאות והכנסות
-- סיכומי מצב: הוצאות, הכנסות, מאזן ומספר רשומות
-- מסכי סינון ודוחות
-- תצוגת נתוני שוק ומטבעות בדף הבית
-- ממשק רספונסיבי מבוסס Bootstrap
+- Add, edit, and delete expenses and income entries
+- Summary cards for expenses, income, balance, and record count
+- Filtering and reporting screens
+- Market and currency data on the home page
+- Responsive UI built with Bootstrap
 
-## דפים
+## Pages
 
-- `index.html` - דף הבית וניהול רשומות
-- `filters.html` - סינון נתונים
-- `reports.html` - דוחות וניתוחים
-- `about.html` - מידע על הפרויקט
+- `index.html` - home page and record management
+- `filters.html` - data filtering
+- `reports.html` - reports and analytics
+- `about.html` - project information
 
-## טכנולוגיות
+## Technologies
 
 - HTML5
 - CSS3
@@ -25,12 +25,12 @@
 - Bootstrap 5
 - Bootstrap Icons
 
-## איך מריצים
+## How to Run
 
-1. פותחים את `index.html` בדפדפן.
-2. אפשר גם להפעיל שרת סטטי מקומי אם רוצים עבודה נוחה יותר.
+1. Open `index.html` in a browser.
+2. You can also use a local static server if you prefer a smoother development workflow.
 
-## מבנה תיקיות
+## Folder Structure
 
 ```text
 Expense Manager/
@@ -48,7 +48,7 @@ Expense Manager/
     └── reports.js
 ```
 
-## הערות
+## Notes
 
-- הנתונים נשמרים בצד הלקוח בלבד.
-- טעינת נתוני השוק והמטבעות תלויה בחיבור אינטרנט ובשירותי צד שלישי.
+- Data is stored only on the client side.
+- Market and currency data depends on internet access and third-party services.
