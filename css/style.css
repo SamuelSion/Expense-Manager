@@ -282,7 +282,7 @@ body {
    ======================================== */
 .market-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
 }
 
@@ -963,7 +963,7 @@ footer {
     .glass-card { padding: 20px; }
     .stat-value { font-size: 1.1rem; }
     .action-btns { flex-direction: column; gap: 4px; }
-    .market-grid { grid-template-columns: repeat(4, 1fr); }
+    .market-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 480px) {
