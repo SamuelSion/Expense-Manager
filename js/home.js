@@ -350,6 +350,10 @@
        Market Data — async/await + fetch
        ======================================== */
 
+    /* Interest rates JSON is refreshed daily by .github/workflows/update-interest-rates.yml */
+    const INTEREST_RATES_URL = "https://raw.githubusercontent.com/SamuelSion/Expense-Manager/main/data/interest-rates.json";
+    const FALLBACK_INTEREST_RATES = { boiRate: 3.25, primeRate: 4.75, updatedDate: "2026-11-19" };
+
     async function loadMarketData() {
         /* Exchange rates — direct, no proxy needed */
         try {
@@ -368,10 +372,20 @@
             ["market-usd", "market-eur", "market-gbp"].forEach((elementId) => { document.getElementById(elementId).textContent = "לא זמין"; });
         }
 
-        /* BOI + Prime — fallback values */
-        document.getElementById("market-boi").textContent = "4.50%";
-        document.getElementById("market-prime").textContent = "6.00%";
+        /* BOI + Prime — daily JSON maintained by a GitHub Action (same-origin-safe, CORS open) */
+        let interestRates = FALLBACK_INTEREST_RATES;
+        try {
+            const interestResponse = await fetch(INTEREST_RATES_URL);
+            if (!interestResponse.ok) throw new Error("Interest rates request failed");
+            interestRates = await interestResponse.json();
+        } catch (error) {
+            interestRates = FALLBACK_INTEREST_RATES;
+        }
+        document.getElementById("market-boi").textContent = interestRates.boiRate.toFixed(2) + "%";
+        document.getElementById("market-prime").textContent = interestRates.primeRate.toFixed(2) + "%";
         ["market-boi", "market-prime"].forEach((elementId) => document.getElementById(elementId).classList.remove("loading"));
+        const rateDateElement = document.getElementById("market-rate-date");
+        if (rateDateElement) rateDateElement.textContent = "ריביות נכונות ל-" + App.formatDate(interestRates.updatedDate) + " (בנק ישראל)";
     }
 
 })();
