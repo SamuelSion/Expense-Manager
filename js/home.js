@@ -350,8 +350,6 @@
        Market Data — async/await + fetch
        ======================================== */
 
-    const CORS_PROXY = "https://corsproxy.io/?url=";
-
     async function loadMarketData() {
         /* Exchange rates — direct, no proxy needed */
         try {
@@ -374,30 +372,6 @@
         document.getElementById("market-boi").textContent = "4.50%";
         document.getElementById("market-prime").textContent = "6.00%";
         ["market-boi", "market-prime"].forEach((elementId) => document.getElementById(elementId).classList.remove("loading"));
-
-        /* S&P 500 — via CORS proxy */
-        try {
-            const spUrl = "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?interval=1d&range=1d";
-            const spResponse = await fetch(CORS_PROXY + encodeURIComponent(spUrl));
-            const spData = await spResponse.json();
-            const spPrice = spData.chart.result[0].meta.regularMarketPrice;
-            document.getElementById("market-sp500").textContent = spPrice.toLocaleString("en-US", { maximumFractionDigits: 0 });
-        } catch (error) {
-            document.getElementById("market-sp500").textContent = "לא זמין";
-        }
-        document.getElementById("market-sp500").classList.remove("loading");
-
-        /* NASDAQ — via CORS proxy */
-        try {
-            const nasdaqUrl = "https://query1.finance.yahoo.com/v8/finance/chart/%5EIXIC?interval=1d&range=1d";
-            const nasdaqResponse = await fetch(CORS_PROXY + encodeURIComponent(nasdaqUrl));
-            const nasdaqData = await nasdaqResponse.json();
-            const nasdaqPrice = nasdaqData.chart.result[0].meta.regularMarketPrice;
-            document.getElementById("market-nasdaq").textContent = nasdaqPrice.toLocaleString("en-US", { maximumFractionDigits: 0 });
-        } catch (error) {
-            document.getElementById("market-nasdaq").textContent = "לא זמין";
-        }
-        document.getElementById("market-nasdaq").classList.remove("loading");
     }
 
 })();
